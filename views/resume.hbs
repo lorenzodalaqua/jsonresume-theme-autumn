@@ -5,31 +5,51 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
-	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+	<title>{{resume.basics.name}}</title>
 
   {{#if css}}
     <style>
     {{{css}}}
     </style>
   {{/if}}
-
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   {{#if stylesheet}}
     <link rel="stylesheet" href="{{stylesheet}}"/>
   {{/if}}
 
 	</head>
-	<body>
-
-	<div class="max-w-6xl mx-auto">
-		{{> basics }}
-		{{> work }}
-		{{> volunteer }}
-		{{> education }}
-		{{> awards }}
-		{{> publications }}
-		{{> skills }}
-		{{> languages }}
-		{{> interests }}
-		{{> references }}
+	<body class="bg-orange-50 p-8 text-slate-900">
+	<div class="max-w-4xl mx-auto px-2">
+    <div class="mb-2">
+      <div class="flex flex-row justify-between">
+        <div>
+          <h1 class="text-5xl">{{resume.basics.name}}</h1>
+          <h2 class="text-xl">{{resume.basics.label}}</h2>
+        </div>
+        <div>
+          {{> contact}}
+        </div>
+      </div>
+    </div>
+    {{#if resume.basics.summary}}
+      <div class="mb-2">
+        <p>{{resume.basics.summary}}</p>
+      </div>
+    {{/if}}
+    <div class="grid grid-cols-4 gap-6">
+      <div class="order-2 col-span-3">
+        {{> work }}
+        {{> volunteer }}
+        {{> education }}
+        {{> awards }}
+        {{> publications }}
+        {{> references }}
+      </div>
+      <div class="order-1 col-span-1">
+        {{> skills }}
+        {{> languages }}
+        {{> interests }}
+      </div>
+    </div>
 	</body>
 </html>

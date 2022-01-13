@@ -1,0 +1,9 @@
+<div class="p-1 text-orange-900">
+  <span class="sr-only">{{title}}: </span>
+  <i class="fa fa-{{icon}} text-m mr-2 text-orange-500 w-2 inline-flex flex-row items-center justify-center"></i>
+  {{#if url}}
+    <a href="{{url}}"> {{text}} <i class="fa fa-external-link text-xs" aria-hidden="true"></i></a>
+  {{else}}
+    <span>{{text}}</span>
+  {{/if}}
+</div>

@@ -1,0 +1,12 @@
+<div class="mb-2">
+  {{#if name}}
+    <h3 class="font-sm font-bold mb-1">{{name}}</h3>
+  {{/if}}
+  {{#if keywords.length}}
+    <p>
+      {{#each keywords}}
+        {{.}}{{#unless @last}},{{/unless}}
+      {{/each}}
+    </p>
+  {{/if}}
+</div>

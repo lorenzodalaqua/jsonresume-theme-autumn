@@ -1,0 +1,13 @@
+{{#resume.basics}}
+		{{#if profiles.length}}
+		<section class="flex flex-row justify-items-center items-center">
+			{{#each profiles}}
+			<div class="m-1">
+				{{#if network}}
+          {{> icon-tag icon=network text=username url=url title=network}}
+				{{/if}}
+			</div>
+			{{/each}}
+		</section>
+		{{/if}}
+{{/resume.basics}}

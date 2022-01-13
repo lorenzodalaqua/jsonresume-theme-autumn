@@ -2,15 +2,15 @@
 <section id="references">
 	<h2>References</h2>
 	{{#each resume.references}}
-	<div class="item">
+	<div class="p-2 bg-orange-100 rounded">
 		{{#if reference}}
-		<blockquote class="reference">
+		<blockquote class="italic mb-2">
 			{{reference}}
 		</blockquote>
 		{{/if}}
 		{{#if name}}
-		<div class="name">
-			— {{name}}
+		<div class="font-bold text-orange-500">
+			{{name}}
 		</div>
 		{{/if}}
 	</div>

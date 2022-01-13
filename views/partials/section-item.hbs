@@ -1,0 +1,46 @@
+<div class="mb-4">
+  <div class="flex flex-row items-center justify-between mb-3">
+    <div>
+      <h3 class="text-base font-bold">
+        {{#if website}}
+          <a href="{{website}}" target="_blank">
+            {{title}} <i class="fa fa-external-link text-xs" aria-hidden="true"></i>
+          </a>
+        {{else}}
+          {{title}}
+        {{/if}}
+      </h3>
+      {{#if subtitle}}
+        <p class="font-bold text-orange-700">
+          {{subtitle}}
+        </p>
+      {{/if}}
+    </div>
+    {{#if startDate}}
+      <div class="text-sm text-orange-500">
+        {{formatDate startDate}}
+        {{#if endDate}}
+          - {{formatDate endDate}}
+        {{else}}
+          - Present
+        {{/if}}
+      </div>
+      {{else}}
+        {{#if date}}
+          <div class="text-sm text-orange-500">
+            {{formatDate date}}
+          </div>
+        {{/if}}
+    {{/if}}
+  </div>
+  {{#if text}}
+    <p class="mb-2">{{text}}</p>
+  {{/if}}
+  {{#if list.length}}
+    <ul class="list-disc list-inside">
+      {{#each list}}
+        <li class="mb-1">{{.}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>

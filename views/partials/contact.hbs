@@ -1,0 +1,23 @@
+{{#resume.basics}}
+	<section>
+    {{#if website}}
+      {{> icon-tag icon="desktop" text=(removeProtocol website) url=website title="Website"}}
+    {{/if}}
+    {{#if email}}
+      {{> icon-tag icon="envelope" text=email title="E-mail" url=""}}
+    {{/if}}
+    {{#if phone}}
+      {{> icon-tag icon="phone" text=phone title="Phone" url=""}}
+    {{/if}}
+    {{#if location}}
+      {{> icon-tag icon="map-marker" text=(formatAddress location) title="Location" url=""}}
+    {{/if}}
+    {{#if profiles.length}}
+			{{#each profiles}}
+				{{#if network}}
+          {{> icon-tag icon=(lowercase network) text=network url=url title=network}}
+				{{/if}}
+			{{/each}}
+		{{/if}}
+	</section>
+{{/resume.basics}}

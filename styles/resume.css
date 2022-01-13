@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-xs;
+  }
+
+  h1 {
+    @apply text-orange-900;
+  }
+
+  h2 {
+    @apply text-2xl my-4 border-b-4 rounded-lg border-orange-500 inline-block text-orange-900;
+  }
+
+  h3 {
+    @apply text-orange-900;
+  }
+
+  a {
+    @apply hover:underline;
+  }
+}

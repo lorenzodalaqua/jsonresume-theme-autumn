@@ -7,8 +7,11 @@ const {
   VIEWS_DIR,
   PARTIALS_DIR,
   TEMPLATE_FILENAME,
-  CSS_FILENAME
+  CSS_FILENAME,
+  helpers
 } = require('./build-config');
+
+handlebars.registerHelper(helpers);
 
 function render(resume) {
   const Handlebars = wax(handlebars);

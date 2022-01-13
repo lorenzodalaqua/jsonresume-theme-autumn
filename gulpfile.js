@@ -16,7 +16,8 @@ const {
   HTML_FILENAME,
   CSS_FILENAME,
   RESUME_PATH,
-  FALLBACK_RESUME_PATH
+  FALLBACK_RESUME_PATH,
+  helpers
 } = require('./build-config');
 
 /**
@@ -54,11 +55,7 @@ function html() {
     ignorePartials: false,
     partials: {},
     batch: [PARTIALS_DIR],
-    helpers: {
-      capitals: function (str) {
-        return str.toUpperCase();
-      }
-    }
+    helpers: helpers
   };
 
   return gulp

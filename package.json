@@ -9,10 +9,13 @@
   },
   "scripts": {
     "start": "gulp cssExport && resume serve --theme .",
+    "export": "gulp cssExport && resume export resume.pdf --theme .",
     "dev": "gulp"
   },
   "license": "MIT",
   "dependencies": {
+    "country-code-lookup": "0.0.20",
+    "date-fns": "^2.28.0",
     "handlebars": "^4.7.7",
     "handlebars-wax": "^6.1.0"
   },

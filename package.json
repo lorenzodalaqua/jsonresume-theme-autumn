@@ -1,14 +1,14 @@
 {
-  "name": "jsonresume-theme-lpd2022",
-  "version": "0.0.1",
-  "description": "A personal theme for JSON Resume",
+  "name": "jsonresume-theme-autumn",
+  "version": "1.0.0",
+  "description": "Autumn theme for the JSON Resume Project",
   "author": "Lorenzo Dal'Aqua",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lordalaqua/jsonresume-theme-lpd2022"
+    "url": "https://github.com/lorenzodalaqua/jsonresume-theme-autumn"
   },
   "scripts": {
-    "start": "gulp cssExport && resume serve --theme .",
+    "start": "resume serve --theme .",
     "export": "gulp cssExport && resume export resume.pdf --theme .",
     "dev": "gulp"
   },

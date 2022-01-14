@@ -32,7 +32,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: Ubuntu, ui-sans-serif, sans-serif; /* 4 */
 }
 
 /*
@@ -379,33 +379,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
-  body {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
   --tw-text-opacity: 1;
   color: rgb(124 45 18 / var(--tw-text-opacity));
 }
 
   h2 {
-  margin-top: 1rem;
   margin-bottom: 1rem;
   display: inline-block;
+  -moz-column-break-after: avoid;
+       break-after: avoid;
   border-radius: 0.5rem;
   border-bottom-width: 4px;
   --tw-border-opacity: 1;
   border-color: rgb(249 115 22 / var(--tw-border-opacity));
   font-size: 1.5rem;
   line-height: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(124 45 18 / var(--tw-text-opacity));
 }
 
-  h3 {
-  --tw-text-opacity: 1;
-  color: rgb(124 45 18 / var(--tw-text-opacity));
+  section {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
 
   a:hover {
@@ -468,9 +462,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   white-space: nowrap;
   border-width: 0;
 }
-.order-2 {
-  order: 2;
-}
 .order-1 {
   order: 1;
 }
@@ -490,26 +481,35 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .mr-2 {
   margin-right: 0.5rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 .mb-3 {
   margin-bottom: 0.75rem;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
 }
 .inline-flex {
   display: inline-flex;
-}
-.grid {
-  display: grid;
 }
 .w-2 {
   width: 0.5rem;
@@ -523,11 +523,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .list-disc {
   list-style-type: disc;
 }
+.break-inside-avoid {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
 }
 .items-center {
   align-items: center;
@@ -541,8 +551,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-items-center {
   justify-items: center;
 }
-.gap-6 {
-  gap: 1.5rem;
+.gap-8 {
+  gap: 2rem;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -568,6 +578,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -583,10 +609,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -612,4 +634,40 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-orange-700 {
   --tw-text-opacity: 1;
   color: rgb(194 65 12 / var(--tw-text-opacity));
+}
+@media print {
+
+  .print\:order-2 {
+    order: 2;
+  }
+
+  .print\:grid {
+    display: grid;
+  }
+
+  .print\:flex-row {
+    flex-direction: row;
+  }
+
+  .print\:justify-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 640px) {
+
+  .sm\:order-2 {
+    order: 2;
+  }
+
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
 }

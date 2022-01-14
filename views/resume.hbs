@@ -1,18 +1,25 @@
 <!doctype html>
 <html>
 	<head>
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
 
 	<title>{{resume.basics.name}}</title>
 
+  {{!-- Fonts and icons --}}
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  {{!-- When using with resume-cli, inline CSS --}}
   {{#if css}}
     <style>
       {{{css}}}
     </style>
   {{/if}}
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  {{!-- When developing, stylesheet is loaded from another file --}}
   {{#if stylesheet}}
     <link rel="stylesheet" href="{{stylesheet}}"/>
   {{/if}}

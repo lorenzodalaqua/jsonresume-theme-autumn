@@ -4,7 +4,7 @@ This is the Autumn theme for [JSON Resume](https://jsonresume.org/). It is built
 
 ## Development
 
-The theme was starte from the [JSON Resume boilerplate theme](https://www.npmjs.org/package/jsonresume-theme-boilerplate) but I changed the build process for a better interactive development experience for my tastes.
+The theme was started from the [JSON Resume boilerplate theme](https://www.npmjs.org/package/jsonresume-theme-boilerplate) but I changed the build process for a better interactive development experience for my tastes.
 
 To customize this theme or use this as a template to write your own you will need node.js and NPM installed on your system.
 

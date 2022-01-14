@@ -1,12 +1,12 @@
-<div class="mb-2">
+<div class="mb-2 break-inside-avoid">
   {{#if name}}
-    <h3 class="font-sm font-bold mb-1">{{name}}</h3>
+    <h3 class="font-sm font-bold mb-2">{{name}}</h3>
   {{/if}}
   {{#if keywords.length}}
-    <p>
+    <div>
       {{#each keywords}}
-        {{.}}{{#unless @last}},{{/unless}}
+        <span class="inline-block mr-1 mb-1 py-0.5 px-1 bg-orange-100 rounded text-orange-700">{{.}}</span>
       {{/each}}
-    </p>
+    </div>
   {{/if}}
 </div>

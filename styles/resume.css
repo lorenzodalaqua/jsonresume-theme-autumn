@@ -17,7 +17,7 @@
   }
 
   section {
-    @apply break-inside-avoid;
+    @apply break-inside-avoid mb-2;
   }
 
   a {

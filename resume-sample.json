@@ -34,7 +34,7 @@
   },
   "work": [
     {
-      "company": "Pied Piper",
+      "name": "Pied Piper",
       "position": "CEO/President",
       "website": "http://piedpiper.com",
       "startDate": "2014-04-13",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "company": "Hooli",
+      "name": "Hooli",
       "position": "Software Engineer",
       "website": "http://www.hooli.xyz/",
       "startDate": "2013-01-01",

@@ -398,6 +398,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
   section {
+  margin-bottom: 0.5rem;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
 }
@@ -487,11 +488,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2 {
   margin-right: 0.5rem;
 }
-.mr-1 {
-  margin-right: 0.25rem;
-}
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
 }
 .mb-6 {
   margin-bottom: 1.5rem;
@@ -565,14 +566,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 237 213 / var(--tw-bg-opacity));
 }
-.p-8 {
-  padding: 2rem;
-}
 .p-1 {
   padding: 0.25rem;
 }
 .p-2 {
   padding: 0.5rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -589,6 +591,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+.pt-8 {
+  padding-top: 2rem;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -651,6 +656,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .print\:justify-between {
     justify-content: space-between;
+  }
+
+  .print\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 @media (min-width: 640px) {

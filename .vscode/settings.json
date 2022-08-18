@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "vscode",
         "schema-compliance",
-        "html"
+        "html",
+        "ux"
     ]
 }

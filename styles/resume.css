@@ -14,10 +14,12 @@
 
   h2 {
     @apply text-2xl mb-4 border-b-4 rounded-lg border-orange-500 inline-block break-after-avoid;
+    box-decoration-break: clone;
   }
 
   section {
     @apply break-inside-avoid mb-2;
+    box-decoration-break: clone;
   }
 
   a {

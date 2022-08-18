@@ -1,13 +1,28 @@
-{{#resume.basics}}
+
+<section class="basics-profiles">
+	{{#resume.basics}}
 		{{#if profiles.length}}
-		<section class="flex flex-row justify-items-center items-center">
-			{{#each profiles}}
-			<div class="m-1">
-				{{#if network}}
-          {{> icon-tag icon=network text=username url=url title=network}}
-				{{/if}}
+		{{!-- #ThankYou https://www.section.io/engineering-education/using-tailwind-css-grid-classes/ --}}
+		{{!-- <div class="grid grid-cols-4 gap-2 p-4"> --}}
+			<div class="grid grid-flow-col auto-cols-fr my-3 ">
+				{{#each profiles}}
+					{{#if network}}
+						<div class="shadow-sm text-center p-2 py-1 rounded-sm">
+
+							{{> icon-tag
+								title=network
+								icon=(iconOrValue icon network)
+								text=network
+								url=url
+							}}
+
+							{{!-- {{ network }} --}}
+
+						</div>
+
+					{{/if}}
+				{{/each}}
 			</div>
-			{{/each}}
-		</section>
 		{{/if}}
-{{/resume.basics}}
+	{{/resume.basics}}
+</section>

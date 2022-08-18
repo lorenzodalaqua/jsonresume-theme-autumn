@@ -14,6 +14,9 @@ module.exports = {
 
   RESUME_PATH: __dirname + '/resume.json',
   FALLBACK_RESUME_PATH: __dirname + '/resume-sample.json',
+
+  // // //
+
   helpers: {
     uppercase: function (str) {
       return str.toUpperCase();
@@ -82,6 +85,17 @@ module.exports = {
     formatDate: function (string) {
       const date = new Date(`${string} 00:00:01`);
       return formatDate(date, 'MMM yyyy');
+    },
+
+    /**
+    * Support optional `profiles.
+    * @param   {any} icon
+    * @param   {any} fallback
+    * @returns {any}
+    */
+    iconOrValue: function(icon, fallback) {
+      // console.debug('iconOrValue', icon, fallback);
+      return typeof icon === 'string' && icon.length > 0 ? icon : fallback.toLowerCase();
     }
   }
 };

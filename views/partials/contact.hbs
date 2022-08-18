@@ -1,16 +1,28 @@
 {{#resume.basics}}
 	<section>
     {{#if location}}
-      {{> icon-tag icon="map-marker" text=(formatAddress location) title="Location" url=""}}
-    {{/if}}
-    {{#if email}}
-      {{> icon-tag icon="envelope" text=email title="E-mail" url=""}}
+      {{> icon-tag
+        title="Location"
+        icon="map-marker"
+        text=(formatAddress location)
+        url=location.url
+      }}
     {{/if}}
     {{#if phone}}
-      {{> icon-tag icon="phone" text=phone title="Phone" url=""}}
+      {{> icon-tag
+        title="Phone"
+        icon="phone"
+        text=phone
+        url="phone_url"
+      }}
     {{/if}}
-    {{#if website}}
-      {{> icon-tag icon="desktop" text=(removeProtocol website) url=website title="Website"}}
+    {{#if email}}
+      {{> icon-tag
+        title="Email"
+        icon="envelope"
+        text=email
+        url="email_url"
+      }}
     {{/if}}
 
     {{!--
@@ -31,7 +43,7 @@
         text=(removeProtocol website)
         url=url
       }}
-		{{/if}}
+    {{/if}}
 
 	</section>
 {{/resume.basics}}

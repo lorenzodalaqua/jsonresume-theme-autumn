@@ -101,7 +101,7 @@ function watch() {
 function server() {
   return gulp.src(OUTPUT_DIR).pipe(
     webserver({
-      port: 6660,
+      port: 8888,
       open: true
     })
   );

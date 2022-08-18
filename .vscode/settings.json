@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "vscode",
-        "schema-compliance"
+        "schema-compliance",
+        "html"
     ]
 }

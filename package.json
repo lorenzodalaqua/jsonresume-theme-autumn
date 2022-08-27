@@ -9,8 +9,11 @@
   },
   "scripts": {
     "start": "resume serve --theme .",
-    "export": "gulp cssExport && resume export resume.pdf --theme .",
-    "dev": "gulp"
+    "export-html": "yarn resume export public/index.html --format=html --theme .",
+    "export-pdf": "gulp cssExport && resume export public/resume-Greg-Stevens.pdf --theme .",
+    "dev": "gulp",
+    "build": "yarn export-html && yarn export-pdf",
+    "deploy-prod": "vercel build --prod && vercel deploy --prebuilt --prod"
   },
   "license": "MIT",
   "dependencies": {
@@ -23,6 +26,7 @@
     "autoprefixer": "^10.4.2",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",

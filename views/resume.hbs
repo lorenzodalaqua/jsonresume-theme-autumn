@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html lang="{{resume.basics.lang}}">
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -26,37 +26,40 @@
 
 	</head>
 	<body class="bg-orange-50 pt-8 px-4 print:px-8 text-slate-900 text-sm">
-	<div class="max-w-4xl mx-auto px-2">
-  <div class="mb-2">
-      <div class="flex flex-col sm:flex-row print:flex-row sm:justify-between print:justify-between">
-        <div>
-          <h1 class="text-5xl mb-4">{{resume.basics.name}}</h1>
-          <h2 class="text-xl mb-4">{{resume.basics.label}}</h2>
+    <div class="max-w-4xl mx-auto px-2">
+      <div class="basics border-b-2 mb-2 pb-2 border-orange-500">
+            <div>
+            <h1 class="text-5xl mb-4">{{resume.basics.name}}</h1>
+
+            {{!-- basics.label e.g. "Programmer" --}}
+            <h2 class="text-l mb-4">{{resume.basics.label}}</h2>
+
+            {{#if resume.basics.summary}}
+              <div class="mb-4 mx-10">
+                <h3 class="italic border-l-4 border-orange-300 p-4 text-lg">{{resume.basics.summary}}</h3>
+              </div>
+            {{/if}}
+
+            <div class="profiles">
+              {{> profiles }}
+            </div>
+          </div>
+      </div>
+      <div class="sm:grid print:grid grid-cols-4 gap-8">
+        <div class="sm:order-2 print:order-2 col-span-3 mb-4">
+          {{> work }}
+          {{> volunteer }}
+          {{> education }}
+          {{> awards }}
+          {{> publications }}
+          {{> references }}
         </div>
-        <div>
-          {{> contact}}
+        <div class="order-1 col-span-1 mb-4">
+          {{> skills }}
+          {{> languages }}
+          {{> interests }}
         </div>
       </div>
     </div>
-    {{#if resume.basics.summary}}
-      <div class="mb-4">
-        <p>{{resume.basics.summary}}</p>
-      </div>
-    {{/if}}
-    <div class="sm:grid print:grid grid-cols-4 gap-8">
-      <div class="sm:order-2 print:order-2 col-span-3 mb-4">
-        {{> work }}
-        {{> volunteer }}
-        {{> education }}
-        {{> awards }}
-        {{> publications }}
-        {{> references }}
-      </div>
-      <div class="order-1 col-span-1 mb-4">
-        {{> skills }}
-        {{> languages }}
-        {{> interests }}
-      </div>
-    </div>
-	</body>
+  </body>
 </html>

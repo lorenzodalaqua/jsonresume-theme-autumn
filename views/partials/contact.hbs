@@ -1,23 +1,49 @@
 {{#resume.basics}}
 	<section>
     {{#if location}}
-      {{> icon-tag icon="map-marker" text=(formatAddress location) title="Location" url=""}}
-    {{/if}}
-    {{#if email}}
-      {{> icon-tag icon="envelope" text=email title="E-mail" url=""}}
+      {{> icon-tag
+        title="Location"
+        icon="map-marker"
+        text=(formatAddress location)
+        url=location.url
+      }}
     {{/if}}
     {{#if phone}}
-      {{> icon-tag icon="phone" text=phone title="Phone" url=""}}
+      {{> icon-tag
+        title="Phone"
+        icon="phone"
+        text=phone
+        url="phone_url"
+      }}
     {{/if}}
-    {{#if website}}
-      {{> icon-tag icon="desktop" text=(removeProtocol website) url=website title="Website"}}
+    {{#if email}}
+      {{> icon-tag
+        title="Email"
+        icon="envelope"
+        text=email
+        url="email_url"
+      }}
     {{/if}}
-    {{#if profiles.length}}
-			{{#each profiles}}
-				{{#if network}}
-          {{> icon-tag icon=(lowercase network) text=network url=url title=network}}
-				{{/if}}
-			{{/each}}
-		{{/if}}
+
+    {{!--
+    `website` is NOT a JSON Schema Element.
+    basics.url is used instead.
+
+    https://jsonresume.org/schema/, 2022-08-17 at 11:26:50 MT
+
+    #todo Test with JSON Schema official resume sample.
+    #todo Write TestCafe Script to Check All Themes, 24/7 with www.ChecklyHQ.com
+          - If using TestCafe, Playwright used instead of TestCafe.
+          - Could use TestCafe Service too.
+    --}}
+    {{#if url}}
+      {{> icon-tag
+        title="Website"
+        icon="desktop"
+        text=(removeProtocol website)
+        url=url
+      }}
+    {{/if}}
+
 	</section>
 {{/resume.basics}}

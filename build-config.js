@@ -14,6 +14,9 @@ module.exports = {
 
   RESUME_PATH: __dirname + '/resume.json',
   FALLBACK_RESUME_PATH: __dirname + '/resume-sample.json',
+
+  // // //
+
   helpers: {
     uppercase: function (str) {
       return str.toUpperCase();
@@ -40,27 +43,59 @@ module.exports = {
       return args.slice(0, -1);
     },
     formatAddress: function (location) {
-      const { address, city, region, countryCode, postalCode } = location;
-      let text = '';
+      // const { address, city, region, countryCode, postalCode } = location;//
+
+      // console.debug('location', location);
+
+      var text = [];
       /**
        * I prefer to only list the city, region and country, but if you want to
        * show the whole address just uncomment  the lines for each address part.
        */
       //if (address) text += `${address}, `;
-      if (city) text += city;
-      if (region) text += `, ${region}`;
-      if (countryCode) {
-        const found = lookup.byIso(countryCode);
-        if (found) {
-          text += `, ${found.country}`;
-        }
-      }
-      // if (postalCode) text += `, ${postalCode}`;
+      // with(location) {
+      //   if (city) text.push(city);
+      //   if (region) text.push(region);
+
+      //   if (countryCode) {
+      //     const found = lookup.byIso(countryCode);
+      //     if (found) {
+      //       text.push(found.country);
+      //     }
+      //   }
+      //   // if (postalCode) text.push(postalCode);
+      // }
+
+      // text.push(location.city);
+      text.push(location.region);
+      text.push(lookup.byIso(location.countryCode).country);
+
+      /*
+      Buffer to String
+      - fastest way of concating strings
+      - no dealing with trailing commas
+      - or missing/blank values
+      */
+      text = text.join(', ');
+
+      // console.debug('formatAddress', 'text', text)
+
       return text;
     },
     formatDate: function (string) {
       const date = new Date(`${string} 00:00:01`);
       return formatDate(date, 'MMM yyyy');
+    },
+
+    /**
+    * Support optional `profiles.
+    * @param   {any} icon
+    * @param   {any} fallback
+    * @returns {any}
+    */
+    iconOrValue: function(icon, fallback) {
+      // console.debug('iconOrValue', icon, fallback);
+      return typeof icon === 'string' && icon.length > 0 ? icon : fallback.toLowerCase();
     }
   }
 };
